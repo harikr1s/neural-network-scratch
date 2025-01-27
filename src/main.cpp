@@ -135,5 +135,6 @@ int main(int argc, char **argv)
                 cxxplot::named_parameters::ylabel_ = "Training Loss"
             );
 
-            return 0; });
+            return 0; 
+        });
 }
