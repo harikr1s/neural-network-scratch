@@ -12,7 +12,7 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(cxxplot)
 
-set(BOOST_ROOT "/home/harikris/tools/boost_1_87_0")
+set(BOOST_ROOT "/path/to/boost")
 include_directories(boost)
 
 target_link_libraries(main PRIVATE cxxplot)
