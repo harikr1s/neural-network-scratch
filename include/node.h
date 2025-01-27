@@ -2,8 +2,6 @@
 #include <vector>
 #include <cmath>
 
-#pragma once
-
 struct Edge
 {
     double weight, delta_weight;
