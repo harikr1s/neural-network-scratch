@@ -2,7 +2,6 @@
 #include <getopt.h>
 
 #include "../include/dataloader.h"
-#include "../include/node.h"
 #include "../include/neuralnetwork.h"
 
 int main(int argc, char **argv)
