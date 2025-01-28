@@ -29,7 +29,7 @@ public:
             data.push_back(row);
         }
 
-        create_dataset_folder("data");
+        create_folder("data");
 
         // introducing gaussian noise to the dataset
 
@@ -48,7 +48,7 @@ public:
                 }
             }
 
-            write_to_csv("./datas/noisy_dataset.csv", data);
+            write_to_csv("./data/noisy_dataset.csv", data);
         }
 
         // robust scaler
@@ -133,11 +133,12 @@ private:
         }
     }
 
-    void create_dataset_folder(std::string folder_name)
+    void create_folder(std::string folder_name)
     {
         if (!std::filesystem::is_directory(folder_name) || !std::filesystem::exists(folder_name)) 
         { 
             std::filesystem::create_directory(folder_name); 
         }
     }
+
 };
