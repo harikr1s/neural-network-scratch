@@ -168,6 +168,39 @@ public:
         }
     }
 
+    void save_weights(const std::string& filename)
+    {
+        std::ofstream out(filename, std::ios::binary);
+        for (const auto& layer : layers) 
+        {
+            for (const auto& node : layer) 
+            {
+                for (const auto& edge : node.print_output_weights()) 
+                {
+                    out.write(reinterpret_cast<const char*>(&edge.weight), sizeof(edge.weight));
+                }
+            }
+        }
+        out.close();
+    }   
+
+    void load_weights(const std::string& filename)
+    {
+        std::ifstream in(filename, std::ios::binary);
+
+        for (auto& layer : layers)
+        {
+            for (auto& node : layer)
+            {
+                for (auto& edge : node.print_output_weights()) 
+                {
+                    in.read(reinterpret_cast<char*>(&edge.weight), sizeof(edge.weight));
+                }
+            }
+        }
+        in.close();
+    }
+
 private:
     std::vector<Layer> layers;
     double error, delta_weight;
