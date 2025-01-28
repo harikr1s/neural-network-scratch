@@ -83,7 +83,7 @@ public:
         }
     }
 
-    std::vector<Edge> print_output_weights()
+    std::vector<Edge> print_output_weights() const
     {
         return node_output_weight;
     }
